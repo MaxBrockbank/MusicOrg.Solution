@@ -6,8 +6,12 @@ using System;
 namespace MusicOrg.Tests
 {
     [TestClass]
-    public class VinylTests
+    public class VinylTests : IDisposable
     {
+        public void Dispose()
+        {
+            Vinyl.ClearAll();
+        }
         [TestMethod]
         public void VinylConstructor_CreatesInstanceOfVinyl_Vinyl()
         {
@@ -21,6 +25,15 @@ namespace MusicOrg.Tests
             Vinyl newVinyl = new Vinyl(title);
             string result = newVinyl.Title;
             Assert.AreEqual(title, result);
+        }
+        [TestMethod]
+        public void GetAll_ReturnsListOfVinyls_List()
+        {
+            Vinyl newVinyl = new Vinyl("title");
+            Vinyl newVinyl2 = new Vinyl("title");
+            List<Vinyl> newList = new List<Vinyl> { newVinyl, newVinyl2};
+            List<Vinyl> result = Vinyl.GetAll();
+            CollectionAssert.AreEqual(newList, result);
         }
     }
 }
