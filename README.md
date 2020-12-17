@@ -12,9 +12,9 @@ After that, users list out all the artists and choose an artist to see which rec
 
 ## Specs
 
-- Enter task
-- Display task
-- Allow user to add multiple tasks to list
+- Enter vinyl title under an artist name
+- Display vinyl titles by title
+- Display vinyl titles by artist name
 
 ## Technologies Used
 
