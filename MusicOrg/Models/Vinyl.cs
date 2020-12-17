@@ -29,7 +29,7 @@ namespace MusicOrg.Models
 
         public static Vinyl Find(int id)
         {
-            return _instances[id];
+            return _instances[id - 1];
         }
     }
 }
