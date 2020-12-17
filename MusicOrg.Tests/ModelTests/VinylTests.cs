@@ -35,5 +35,14 @@ namespace MusicOrg.Tests
             List<Vinyl> result = Vinyl.GetAll();
             CollectionAssert.AreEqual(newList, result);
         }
+        [TestMethod]
+        public void Find_ReturnsInstanceOfVinylWithThatId_Vinyl()
+        {
+            Vinyl newVinyl = new Vinyl("title");
+            Vinyl newVinyl2 = new Vinyl("title");
+            Vinyl result = Vinyl.Find(1);
+            Assert.AreEqual(newVinyl, result);
+
+        }
     }
 }

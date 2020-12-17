@@ -26,5 +26,10 @@ namespace MusicOrg.Models
         {
             _instances.Clear();
         }
+
+        public static Vinyl Find(int id)
+        {
+            return _instances[id];
+        }
     }
 }
